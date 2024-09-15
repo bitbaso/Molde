@@ -1,7 +1,7 @@
 {
     "Name": "Molde",
     "MoldeFiles": [
-        "TestData/molde.section1.json",
-        "TestData/molde.section2.json"
+        "molde.section1.json",
+        "molde.section2.json"
     ]  
 }

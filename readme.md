@@ -38,29 +38,29 @@ Example `molde.json`:
     "Actions": [
         {
             "Type": "add",
-            "TemplateFile": "TestData/Templates/template1.hbs",
-            "Output": "TestData/Results/output1.txt"
+            "TemplateFile": "Templates/template1.hbs",
+            "Output": "Results/output1.txt"
         },
         {
             "Type": "modify",
-            "TargetFile": "TestData/Results/output1.txt",
+            "TargetFile": "Results/output1.txt",
             "Marker": "//Modifiy to html",
             "Template": "Modified {{pathCase userName}}"
         },
         {
             "Type": "append",
-            "TargetFile": "TestData/Results/output1.txt",
+            "TargetFile": "Results/output1.txt",
             "Marker": "<ul id=\"addplace\">",
             "Template": "<li>Added {{pathCase userName}}</li>"
         },
         {
             "Type": "move",
-            "Source": "TestData/Results/output2.txt",
-            "Destination": "TestData/Results/output4.txt"
+            "Source": "Results/output2.txt",
+            "Destination": "Results/output4.txt"
         },
         {
             "Type": "delete",
-            "Path": "TestData/Results/output3.txt"
+            "Path": "Results/output3.txt"
         },
         {
             "Type": "run",
@@ -76,8 +76,8 @@ Instead of executing actions directly, you can reference other JSON files that s
 {
     "Name": "Molde",
     "MoldeFiles": [
-        "TestData/molde.section1.json",
-        "TestData/molde.section2.json"
+        "molde.section1.json",
+        "molde.section2.json"
     ]
 }
 ```

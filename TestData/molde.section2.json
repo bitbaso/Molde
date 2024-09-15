@@ -13,39 +13,39 @@
     "Actions": [
         {
             "Type": "add",
-            "TemplateFile": "TestData/Templates/template1.hbs",
-            "Output": "TestData/Results/output1.txt"
+            "TemplateFile": "Templates/template1.hbs",
+            "Output": "Results/output1.txt"
         },
         {
             "Type": "add",
-            "TemplateFile": "TestData/Templates/template1.hbs",
-            "Output": "TestData/Results/output2.txt"
+            "TemplateFile": "Templates/template1.hbs",
+            "Output": "Results/output2.txt"
         },
         {
             "Type": "add",
-            "TemplateFile": "TestData/Templates/template1.hbs",
-            "Output": "TestData/Results/output3.txt"
+            "TemplateFile": "Templates/template1.hbs",
+            "Output": "Results/output3.txt"
         },
         {
             "Type": "modify",
-            "TargetFile": "TestData/Results/output1.txt",
+            "TargetFile": "Results/output1.txt",
             "Marker": "//Modifiy to html",
             "Template": "Modificado {{pathCase userName}}"
         },
         {
             "Type": "append",
-            "TargetFile": "TestData/Results/output1.txt",
+            "TargetFile": "Results/output1.txt",
             "Marker": "<ul id=\"addplace\">",
             "Template": "<li>A,gregado {{pathCase userName}}</li>"
         },
         {
             "Type": "move",
-            "Source": "TestData/Results/output2.txt",
-            "Destination": "TestData/Results/output4.txt"
+            "Source": "Results/output2.txt",
+            "Destination": "Results/output4.txt"
         },
         {
             "Type": "delete",
-            "Path": "TestData/Results/output3.txt"
+            "Path": "Results/output3.txt"
         },
         {
             "Type": "run",
