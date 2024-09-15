@@ -1,0 +1,55 @@
+{
+    "Name": "Molde section 1",
+    "Prompts": [
+        {
+            "Name": "userName",
+            "Message": "What is your name?"
+        },
+        {
+            "Name": "favoriteColor",
+            "Message": "What is your favorite color?"
+        }
+    ],
+    "Actions": [
+        {
+            "Type": "add",
+            "TemplateFile": "TestData/Templates/template1.hbs",
+            "Output": "TestData/Results/output1.txt"
+        },
+        {
+            "Type": "add",
+            "TemplateFile": "TestData/Templates/template1.hbs",
+            "Output": "TestData/Results/output2.txt"
+        },
+        {
+            "Type": "add",
+            "TemplateFile": "TestData/Templates/template1.hbs",
+            "Output": "TestData/Results/output3.txt"
+        },
+        {
+            "Type": "modify",
+            "TargetFile": "TestData/Results/output1.txt",
+            "Marker": "//Modifiy to html",
+            "Template": "Modificado {{pathCase userName}}"
+        },
+        {
+            "Type": "append",
+            "TargetFile": "TestData/Results/output1.txt",
+            "Marker": "<ul id=\"addplace\">",
+            "Template": "<li>A,gregado {{pathCase userName}}</li>"
+        },
+        {
+            "Type": "move",
+            "Source": "TestData/Results/output2.txt",
+            "Destination": "TestData/Results/output4.txt"
+        },
+        {
+            "Type": "delete",
+            "Path": "TestData/Results/output3.txt"
+        },
+        {
+            "Type": "run",
+            "Command": "echo File generation complete"
+        }
+    ]
+}

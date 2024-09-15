@@ -1,0 +1,16 @@
+<h1>User patxi koko the color is blue</h1>
+patxi koko
+patxi_koko
+patxi-koko
+patxi.koko
+patxi/koko
+Patxi koko
+patxi koko
+Patxi koko
+PATXI_KOKO
+Patxi Koko
+
+
+//Modifiy to html
+
+<ul id="addplace"></ul>
