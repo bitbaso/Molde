@@ -46,7 +46,7 @@
         {
             "Type": "move",
             "Source": "TestData/Results/output2.txt",
-            "Destination": "TestData/Results/output4.txt"
+            "Destination": "TestData/Results/outputMove{{pathCase userName}}.txt"
         },
         {
             "Type": "delete",

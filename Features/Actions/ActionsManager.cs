@@ -39,7 +39,7 @@ public class ActionsManager(ILogger<ActionsManager> logger) : IActionsManager
                                 await AppendToFileAction(action, variables);
                                 break;
                             case "move":
-                                await MoveFileAction(action);
+                                await MoveFileAction(action, variables);
                                 break;
                             case "delete":
                                 await DeleteFileAction(action);
@@ -194,7 +194,7 @@ public class ActionsManager(ILogger<ActionsManager> logger) : IActionsManager
         }
     }
 
-    private async Task<bool> MoveFileAction(ActionEntity action)
+    private async Task<bool> MoveFileAction(ActionEntity action, Dictionary<string, string> variables)
     {
         try
         {
@@ -206,7 +206,15 @@ public class ActionsManager(ILogger<ActionsManager> logger) : IActionsManager
             {
                 if (File.Exists(action.Source))
                 {
-                    File.Move(action.Source, action.Destination);
+                    var destinationTemplate = Handlebars.Compile(action.Destination);
+                    if (destinationTemplate != null)
+                    {
+                        var destinationPath = destinationTemplate(variables);
+                        if (!string.IsNullOrEmpty(destinationPath))
+                        {
+                            File.Move(action.Source, destinationPath);
+                        }
+                    }
                 }
                 else
                 {
