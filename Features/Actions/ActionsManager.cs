@@ -82,9 +82,22 @@ public class ActionsManager(ILogger<ActionsManager> logger) : IActionsManager
                     var template = Handlebars.Compile(templateContent);
                     if (template != null)
                     {
-                        string result = template(variables);
-                        File.WriteAllText(action.Output, result);
-                        outcome = true;
+
+                        var outputPath = action.Output;
+                        if (!string.IsNullOrEmpty(action.Output))
+                        {
+                            var outputTemplate = Handlebars.Compile(action.Output);
+                            if (outputTemplate != null)
+                            {
+                                outputPath = outputTemplate(variables);
+                                string result = template(variables);
+                                if (!string.IsNullOrEmpty(outputPath))
+                                {
+                                    File.WriteAllText(outputPath, result);
+                                    outcome = true;
+                                }
+                            }
+                        }
                     }
                 }
             }
