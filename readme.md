@@ -42,6 +42,11 @@ Example `molde.json`:
             "Output": "Results/output1.txt"
         },
         {
+            "Type": "add",
+            "TemplateFile": "TestData/Templates/template1.hbs",
+            "Output": "Results/output{{pathCase userName}}.txt"
+        },
+        {
             "Type": "modify",
             "TargetFile": "Results/output1.txt",
             "Marker": "//Modifiy to html",
@@ -56,7 +61,7 @@ Example `molde.json`:
         {
             "Type": "move",
             "Source": "Results/output2.txt",
-            "Destination": "Results/output4.txt"
+            "Destination": "Results/outputMove{{pathCase userName}}.txt"
         },
         {
             "Type": "delete",
